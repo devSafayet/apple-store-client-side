@@ -5,6 +5,7 @@ import slider1 from '../../../Images/slider(1).png';
 import slider2 from '../../../Images/slider (2).png';
 import slider3 from '../../../Images/slider-3.png';
 import SendFeedback from '../SendFeedback/SendFeedback';
+import Items from '../Items/Items';
 
 const Home = () => {
     return (
@@ -36,6 +37,7 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
+            <Items></Items>
             <CustomerFeedback></CustomerFeedback>
             <SendFeedback></SendFeedback>
         </div>
