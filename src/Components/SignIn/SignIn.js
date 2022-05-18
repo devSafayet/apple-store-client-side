@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toast';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import SocialMedia from '../SocialMedia/SocialMedia';
 import './SignIn.css';
 
 const SignIn = () => {
@@ -116,7 +117,7 @@ const SignIn = () => {
                 </div>
 
 
-
+                <SocialMedia></SocialMedia>
                 <ToastContainer></ToastContainer>
 
             </form>

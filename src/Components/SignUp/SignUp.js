@@ -3,6 +3,7 @@ import { Spinner, ToastContainer } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import SocialMedia from '../SocialMedia/SocialMedia';
 import './SignUp.css';
 
 const SignUp = () => {
@@ -79,7 +80,7 @@ const SignUp = () => {
                 </div>
 
 
-
+                <SocialMedia></SocialMedia>
                 <ToastContainer />
 
             </form>
