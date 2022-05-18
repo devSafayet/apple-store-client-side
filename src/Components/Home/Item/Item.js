@@ -1,11 +1,12 @@
-import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
 import auth from '../../../firebase.init';
 
-const Header = () => {
+
+const Item = () => {
     const [user] = useAuthState(auth);
     const handelSignOut = () => {
         signOut(auth).then(() => {
@@ -16,8 +17,7 @@ const Header = () => {
         <nav className='fixed-top mb-3'>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand as={Link} to="/">
-                        <span className='text-primary'>APPLE STORE</span></Navbar.Brand>
+                    <Navbar.Brand as={Link} to="/"><span className='text-warning'>Ts</span><span className='text-success'>-</span><span className='text-primary'>MaCbOoK</span></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto"></Nav>
@@ -32,7 +32,6 @@ const Header = () => {
                             {
                                 user && <Nav.Link as={Link} to="/myitems">My Products</Nav.Link>
                             }
-                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
                             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
 
                             {
@@ -54,4 +53,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default Item;

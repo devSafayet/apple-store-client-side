@@ -2,6 +2,9 @@ import React from 'react';
 import { Carousel } from 'react-bootstrap';
 import Items from '../Items/Items';
 import CustomerFeedback from '../CustomerFeedback/CustomerFeedback';
+import slider1 from '../../../Images/slider(1).png';
+import slider2 from '../../../Images/slider (2).png';
+import slider3 from '../../../Images/slider-3.png';
 
 const Home = () => {
     return (
@@ -11,14 +14,14 @@ const Home = () => {
                     <Carousel.Item interval={1000}>
                         <img
                             className="d-block w-100"
-                            src="https://ibb.co/sQRNvFc"
+                            src={slider1}
                             alt="First slide"
                         />
                     </Carousel.Item>
                     <Carousel.Item interval={500}>
                         <img
                             className="d-block w-100"
-                            src="https://ibb.co/FxD9Zxy"
+                            src={slider2}
                             alt="Second slide"
                         />
 
@@ -26,7 +29,7 @@ const Home = () => {
                     <Carousel.Item>
                         <img
                             className="d-block w-100"
-                            src="https://ibb.co/BVL52T3"
+                            src={slider3}
                             alt="Third slide"
                         />
 
