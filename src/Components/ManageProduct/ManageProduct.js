@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Fotter = () => {
+const ManageProduct = () => {
     return (
         <div>
 
@@ -8,4 +8,4 @@ const Fotter = () => {
     );
 };
 
-export default Fotter;
+export default ManageProduct;

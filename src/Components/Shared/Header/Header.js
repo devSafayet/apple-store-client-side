@@ -21,29 +21,30 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto"></Nav>
+                        <Nav.Link as={Link} to="/home">Home</Nav.Link>
                         <Nav>
                             {
-                                user && <Nav.Link as={Link} to="/addproduct">Add Product</Nav.Link>
+                                user && <Nav.Link as={Link} to="/addProduct">Add Product</Nav.Link>
                             }
                             {
-                                user && <Nav.Link as={Link} to="/manage">Manage Product</Nav.Link>
+                                user && <Nav.Link as={Link} to="/manageProduct">Manage Product</Nav.Link>
                             }
 
                             {
-                                user && <Nav.Link as={Link} to="/myitems">My Products</Nav.Link>
+                                user && <Nav.Link as={Link} to="/myProducts">My Products</Nav.Link>
                             }
-                            <Nav.Link as={Link} to="/home">Home</Nav.Link>
+
                             <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
 
                             {
                                 user
                                     ?
-                                    <Nav.Link as={Link} to="/login" onClick={handelSignOut}>
-                                        signOut
+                                    <Nav.Link as={Link} to="/signin" onClick={handelSignOut}>
+                                        Sign Out
                                     </Nav.Link>
                                     :
-                                    <Nav.Link as={Link} to="/login">
-                                        Login
+                                    <Nav.Link as={Link} to="/signin">
+                                        Sign In
                                     </Nav.Link>
                             }
                         </Nav>

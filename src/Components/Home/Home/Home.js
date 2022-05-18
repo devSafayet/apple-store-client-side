@@ -5,6 +5,7 @@ import CustomerFeedback from '../CustomerFeedback/CustomerFeedback';
 import slider1 from '../../../Images/slider(1).png';
 import slider2 from '../../../Images/slider (2).png';
 import slider3 from '../../../Images/slider-3.png';
+import SendFeedback from '../SendFeedback/SendFeedback';
 
 const Home = () => {
     return (
@@ -38,6 +39,7 @@ const Home = () => {
             </div>
             <Items></Items>
             <CustomerFeedback></CustomerFeedback>
+            <SendFeedback></SendFeedback>
         </div>
     );
 };
