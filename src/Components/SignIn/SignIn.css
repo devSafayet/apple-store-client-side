@@ -1,4 +1,4 @@
-.login-container {
+.signin-container {
     position: relative;
     width: 400px;
     margin: 4rem auto;
@@ -10,8 +10,8 @@
     box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
 }
 
-.login-form input,
-.login-container button {
+.signin-form input,
+.signin-container button {
     display: block;
     width: 100%;
     padding: 0;
@@ -22,11 +22,11 @@
 
 
 
-.login-form input::placeholder {
+.signin-form input::placeholder {
     color: rgb(118, 115, 115);
 }
 
-.login-form input {
+.signin-form input {
     background: #e1e6eb;
     margin: 16px 0 0 0;
     padding: 9px;
@@ -37,14 +37,14 @@
     box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
 }
 
-.login-title {
+.signin-title {
     margin-top: 10px;
     font-weight: 900;
     font-size: 1.8rem;
     letter-spacing: 1px;
 }
 
-.login-form {
+.signin-form {
     text-align: left;
     margin-top: 30px;
 
@@ -122,11 +122,11 @@
 
 /* media qurery */
 @media only screen and (max-width: 600px) {
-    .login-container {
+    .signin-container {
         width: 300px;
     }
 
-    .login-form input {
+    .signin-form input {
         width: 250px;
         height: 35px;
         font-size: 10px;

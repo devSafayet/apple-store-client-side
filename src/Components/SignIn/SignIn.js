@@ -8,16 +8,18 @@ import Loading from '../Loading/Loading';
 import './SignIn.css';
 
 const SignIn = () => {
+    const [showpass, setShowpass] = useState(false);
+    const navigate = useNavigate()
+    const location = useLocation()
     const EmailRef = useRef('');
     const PasswordRef = useRef('');
-    const navigate = useNavigate();
-    const location = useLocation();
-    const [showpass, setShowpass] = useState(false);
+    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
+        auth
+    );
 
-    let from = location.state?.from?.pathname || "/";
+    const from = location.state?.from?.pathname || "/";
 
     let errorElement;
-    // user log in with email and password 
     const [
         signInWithEmailAndPassword,
         user,
@@ -25,34 +27,18 @@ const SignIn = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const logInUser = event => {
+        event.preventDefault()
 
-    //password reset or forgot password
-    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(
-        auth
-    );
+        const email = event.target.email.value;
+        const password = event.target.password.value;
 
+        signInWithEmailAndPassword(email, password)
 
-    if (loading || sending) {
-        return <Loading></Loading>
     }
 
-    if (user) {
-        navigate(from, { replace: true });
-    }
-    if (error) {
-        errorElement = <p className='text-danger'>Error: {error?.message}</p>
-    }
-
-    const logInUser = (event) => {
-        event.preventDefault();
+    const hendelForgetPssword = async () => {
         const email = EmailRef.current.value;
-        const password = PasswordRef.current.value;
-
-        signInWithEmailAndPassword(email, password);
-    }
-
-    const handelForgetPssword = async () => {
-        const email = EmailRef.current.value
         if (email) {
             await sendPasswordResetEmail(email);
             toast("email sent");
@@ -61,23 +47,55 @@ const SignIn = () => {
             toast('enter your email')
         }
 
+    }
+
+
+    if (loading || sending) {
+        return <Loading></Loading>
+    }
+
+    if (user) {
+
+        console.log(user.user.email);
+
+        const url = `http://localhost:4000/login`
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
+                email: user.user.email
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then(res => res.json())
+            .then((data) => {
+                console.log(data.token);
+                localStorage.setItem("accessToken", data.token) // send token to localsotorage
+
+                navigate(from, { replace: true });
+            });
+
 
     }
+    if (error) {
+        errorElement = <p className='text-danger'>Error: {error?.message}</p>
+    }
     return (
-        <div className='login-container'>
-            <div className='login-title text-primary text-center'>Sign In</div>
-            <form className='login-form-full' onSubmit={logInUser}>
+        <div className='signin-container'>
+            <div className='signin-title text-primary text-center'>Sign In</div>
+            <form className='signin-form-full' onSubmit={logInUser}>
                 <div>
+                    <form className="signin-form">
+                        <input type="email" name="email" ref={EmailRef} id="" required placeholder='Enter your Email' />
 
-                    <form className="login-form">
-                        <input type="email" ref={EmailRef} required placeholder='Enter your Email' />
-
-                        <input ref={PasswordRef} type={showpass ? "text" : "password"} required placeholder='Enter Password' />
+                        <input name="password" type={showpass ? "text" : "password"} id="" required placeholder='Enter Password' />
                     </form>
-                    <div className='mt-2 ps-2'>
-                        <input type="checkbox" name="" id="" onClick={() => setShowpass(!showpass)} /> <span>See Password</span>
-                    </div>
 
+                    <div className='mt-2 ps-2'>
+                        <input type="checkbox" name="" id="" onClick={() => setShowpass(!showpass)} /> <span>See Password.</span>
+                    </div>
 
                     <p>
                         {
@@ -85,18 +103,22 @@ const SignIn = () => {
                         }
                     </p>
                     {errorElement}
-                    <input className='submit-btn bg-primary' type="submit" value="Login" />
+                    <input className='submit-btn bg-primary' type="submit" value="Sign In" />
                 </div>
-
                 <div className='d-flex justify-content-around align-items-center'>
                     <div>
                         <Link className='form-link' to='/signup'>Create new account !  </Link>
                     </div>
                     <div>
-                        <button className='form-link btn btn-link' onClick={handelForgetPssword}>Forgotten password?</button>
+                        <button className='form-link btn btn-link' onClick={hendelForgetPssword}>Forget Password !</button>
+
                     </div>
                 </div>
+
+
+
                 <ToastContainer></ToastContainer>
+
             </form>
         </div>
     );
