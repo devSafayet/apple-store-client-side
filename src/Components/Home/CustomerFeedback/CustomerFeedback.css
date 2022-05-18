@@ -1,0 +1,40 @@
+.card-img-feedback {
+    height: 130px;
+    width: 50%;
+    border-radius: 50%;
+    margin-left: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.reviewCard {
+    background-color: rgb(250, 247, 232);
+    height: 300px;
+}
+
+.feedback-container {
+    background-color: rgb(240, 246, 255);
+    padding: 20px;
+}
+
+.card:hover {
+    color: rgb(17, 13, 13);
+    transform: scale(1.025);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px
+}
+
+.card .background-Effect {
+    bottom: 0;
+    height: 0px;
+    width: 100%
+}
+
+.card:hover .background-Effect {
+    bottom: 0;
+    height: 320px;
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    background: #1378af;
+    animation: popBackground 0.3s ease-in
+}
