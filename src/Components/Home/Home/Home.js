@@ -9,7 +9,7 @@ import SendFeedback from '../SendFeedback/SendFeedback';
 const Home = () => {
     return (
         <div>
-            <div className='mt-5'>
+            <div className=''>
                 <Carousel className='w-100'>
                     <Carousel.Item interval={1000}>
                         <img

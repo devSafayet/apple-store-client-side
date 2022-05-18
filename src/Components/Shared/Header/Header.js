@@ -13,7 +13,7 @@ const Header = () => {
         })
     }
     return (
-        <nav className='fixed-top mb-3'>
+        <nav className=''>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
@@ -34,7 +34,7 @@ const Header = () => {
                                 user && <Nav.Link as={Link} to="/myProducts">My Products</Nav.Link>
                             }
 
-                            <Nav.Link as={Link} to="/blog">Blog</Nav.Link>
+                            <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
 
                             {
                                 user
