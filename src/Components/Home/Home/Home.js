@@ -1,6 +1,5 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import Items from '../Items/Items';
 import CustomerFeedback from '../CustomerFeedback/CustomerFeedback';
 import slider1 from '../../../Images/slider(1).png';
 import slider2 from '../../../Images/slider (2).png';
@@ -37,7 +36,6 @@ const Home = () => {
                     </Carousel.Item>
                 </Carousel>
             </div>
-            <Items></Items>
             <CustomerFeedback></CustomerFeedback>
             <SendFeedback></SendFeedback>
         </div>
