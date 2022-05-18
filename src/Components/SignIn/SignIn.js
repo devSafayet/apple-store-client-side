@@ -58,7 +58,7 @@ const SignIn = () => {
 
         console.log(user.user.email);
 
-        const url = `http://localhost:4000/login`
+        const url = `http://localhost:4000/signin`
 
         fetch(url, {
             method: 'POST',
@@ -103,7 +103,7 @@ const SignIn = () => {
                         }
                     </p>
                     {errorElement}
-                    <input className='submit-btn bg-primary' type="submit" value="Sign In" />
+                    <input className='submit-btn bg-primary' type="submit" value="signin" />
                 </div>
                 <div className='d-flex justify-content-around align-items-center'>
                     <div>

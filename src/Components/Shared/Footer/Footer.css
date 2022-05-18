@@ -1,0 +1,17 @@
+.footer-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: rgb(50, 49, 49);
+    color: white;
+    padding: 30px;
+    margin-top: 30px;
+    bottom: 0;
+    width: 100%;
+
+}
+
+.footer-text-area {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+}

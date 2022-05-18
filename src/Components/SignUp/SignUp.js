@@ -69,7 +69,7 @@ const SignUp = () => {
 
                     <p className='text-center text-danger'>{error}</p>
 
-                    <input className='submit-btn bg-primary' type="submit" value="Sign Up" />
+                    <input className='submit-btn bg-primary' type="submit" value="signup" />
                 </div>
                 <div className='d-flex justify-content-around align-items-center'>
                     <div>
