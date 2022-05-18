@@ -1,0 +1,154 @@
+.login-container {
+    position: relative;
+    width: 400px;
+    margin: 4rem auto;
+    height: 760px;
+    border-radius: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background: #ecf0f3;
+    box-shadow: 14px 14px 20px #cbced1, -14px -14px 20px white;
+}
+
+.login-form input,
+.login-container button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+
+
+.login-form input::placeholder {
+    color: rgb(118, 115, 115);
+}
+
+.login-form input {
+    background: #e1e6eb;
+    margin: 16px 0 0 0;
+    padding: 9px;
+    padding-left: 21px;
+    height: 50px;
+    font-size: 15px;
+    border-radius: 50px;
+    box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+}
+
+.login-title {
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+}
+
+.login-form {
+    text-align: left;
+    margin-top: 30px;
+
+}
+
+
+.submit-btn {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    color: white;
+    margin-top: 20px;
+    background: #1da1f2;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 6px 6px 6px #cbced1, -6px -6px 6px white;
+    transition: 0.5s;
+}
+
+.submit-btn button:hover {
+    box-shadow: none;
+}
+
+
+
+.form-link {
+    color: #FF9900;
+    text-decoration: none;
+}
+
+
+.form-or {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-or hr {
+    width: 100px;
+    margin: 5px;
+    padding-top: -3px;
+}
+
+.form-btn-text {
+    width: 415px;
+    height: 55px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #d1e4f0;
+    box-shadow: 0 4px 8px 0 rgba(138, 177, 66, 0.664), 0 3px 5px 0 rgba(182, 142, 55, 0.781);
+}
+
+.google-png {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
+
+.img-google {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github-btn {
+    color: white;
+    background-color: black;
+}
+
+/* media qurery */
+@media only screen and (max-width: 600px) {
+    .login-container {
+        width: 300px;
+    }
+
+    .login-form input {
+        width: 250px;
+        height: 35px;
+        font-size: 10px;
+    }
+
+    .form-btn-text {
+        width: 250px;
+        height: 35px;
+    }
+
+    .form-submit {
+        width: 250px;
+        height: 35px;
+    }
+
+}
+
+.myName {
+    color: blueviolet;
+    font-weight: 700;
+}
+
+.spinner {
+    text-align: center;
+}
