@@ -12,6 +12,7 @@ import RequreAuth from './Components/RequreAuth/RequreAuth';
 import ManageProduct from './Components/ManageProduct/ManageProduct';
 import AddProducts from './Components/AddProducts/AddProducts';
 import Blogs from './Components/Shared/Blogs/Blogs';
+import Inventory from './Components/Inventory/Inventory';
 
 function App() {
   return (
@@ -35,6 +36,13 @@ function App() {
             <MyProducts></MyProducts>
           </RequreAuth>
         }></Route>
+
+        <Route path='/inventory/:id' element={
+          <RequreAuth>
+            <Inventory></Inventory>
+          </RequreAuth>
+        }></Route>
+
         <Route path='/manageProduct' element={
           <RequreAuth>
             <ManageProduct></ManageProduct>
