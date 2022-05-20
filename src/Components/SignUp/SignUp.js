@@ -51,7 +51,7 @@ const SignUp = () => {
 
                         <input type="email" name="email" id="" required placeholder='Enter your Email' />
 
-                        <input name="password" type={showpass ? "text" : "password"} id="" required placeholder='Enter Password' />
+                        <input name="password" type={showpass ? "text" : "password"} id="" placeholder='Enter Password' required />
 
 
                         <input name="confirmpassword" type={showpass ? "text" : "password"} id="" required placeholder='Enter Confirm Password' />
