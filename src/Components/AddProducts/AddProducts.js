@@ -55,7 +55,7 @@ const AddProducts = () => {
             <form onSubmit={addProduct}>
                 <div className=''>
 
-                    <form className="signin-form">
+                    <div className="signin-form">
                         <input type="email" name="email" id="" required placeholder='' value={user.email} />
 
                         <input type="text" name="supplier" id="" required placeholder='Enter the Supplier name' />
@@ -69,7 +69,7 @@ const AddProducts = () => {
                         <input type="text" name="description" id="" required placeholder='Enter simple Description' />
 
                         <input type="text" name="img" id="" required placeholder='image URL Link' />
-                    </form>
+                    </div>
 
                     <input className='submit-btn bg-warning' type="submit" value="Add your Product" />
                 </div>

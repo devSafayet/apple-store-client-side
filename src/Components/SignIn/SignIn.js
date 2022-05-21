@@ -2,11 +2,12 @@ import React, { useRef, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toast';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import './SignIn.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignIn = () => {
     const [showpass, setShowpass] = useState(false);
@@ -40,12 +41,15 @@ const SignIn = () => {
 
     const hendelForgetPssword = async () => {
         const email = EmailRef.current.value;
+        console.log(email)
         if (email) {
             await sendPasswordResetEmail(email);
             toast("email sent");
+
         }
         else {
             toast('enter your email')
+
         }
 
     }
@@ -88,11 +92,11 @@ const SignIn = () => {
             <div className='signin-title text-primary text-center'>Sign In</div>
             <form className='signin-form-full' onSubmit={logInUser}>
                 <div>
-                    <form className="signin-form">
+                    <div className="signin-form">
                         <input type="email" name="email" ref={EmailRef} id="" required placeholder='Enter your Email' />
 
                         <input name="password" type={showpass ? "text" : "password"} id="" required placeholder='Enter Password' />
-                    </form>
+                    </div>
 
                     <div className='mt-2 ps-2'>
                         <input type="checkbox" name="" id="" onClick={() => setShowpass(!showpass)} /> <span>See Password.</span>

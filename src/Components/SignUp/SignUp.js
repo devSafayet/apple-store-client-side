@@ -30,7 +30,7 @@ const SignUp = () => {
         const confirmpassword = event.target.confirmpassword.value;
 
         if (password !== confirmpassword) {
-            setError('password does not match')
+            return setError('password does not match')
         }
 
         createUserWithEmailAndPassword(email, password)
@@ -38,7 +38,8 @@ const SignUp = () => {
 
     }
     if (user) {
-        navigate(from, { replace: true })
+        // navigate(from, { replace: true })
+        navigate('/')
         console.log(user);
     }
     return (
@@ -46,7 +47,7 @@ const SignUp = () => {
             <div className='signin-title text-primary text-center'>Sign Up</div>
             <form onSubmit={hendelSignup}>
                 <div>
-                    <form className="signin-form">
+                    <div className="signin-form">
                         <input type="text" name="name" id="" required placeholder='Enter your Name' />
 
                         <input type="email" name="email" id="" required placeholder='Enter your Email' />
@@ -56,7 +57,7 @@ const SignUp = () => {
 
                         <input name="confirmpassword" type={showpass ? "text" : "password"} id="" required placeholder='Enter Confirm Password' />
 
-                    </form>
+                    </div>
 
                     <div className='mt-2 ps-2'>
                         <input type="checkbox" name="" id="" onClick={() => setShowpass(!showpass)} /> <span>See All Password</span>
