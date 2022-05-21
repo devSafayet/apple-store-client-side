@@ -13,6 +13,7 @@ import ManageProduct from './Components/ManageProduct/ManageProduct';
 import AddProducts from './Components/AddProducts/AddProducts';
 import Blogs from './Components/Shared/Blogs/Blogs';
 import Inventory from './Components/Inventory/Inventory';
+import ManageProducts from './Components/ManageProducts/ManageProducts';
 
 function App() {
   return (
@@ -43,9 +44,10 @@ function App() {
           </RequreAuth>
         }></Route>
 
+        {/* <Route path='/manageProduct' element={<ManageProducts></ManageProducts>}></Route> */}
         <Route path='/manageProduct' element={
           <RequreAuth>
-            <ManageProduct></ManageProduct>
+            <ManageProducts></ManageProducts>
           </RequreAuth>
         }></Route>
 

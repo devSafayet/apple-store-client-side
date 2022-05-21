@@ -8,7 +8,7 @@ const Item = ({ apple }) => {
     console.log(apple);
 
     const hendelInventory = (id) => {
-        navigate()
+        navigate(`/inventory/${id}`)
     }
     return (
         <div className='col-md-4 mb-3'>

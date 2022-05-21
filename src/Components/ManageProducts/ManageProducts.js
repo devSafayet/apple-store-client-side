@@ -5,11 +5,14 @@ const ManageProducts = () => {
     const [applestores, setApplestores] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:4000//products";
+        const url = "http://localhost:4000/products";
 
         fetch(url)
             .then(res => res.json())
-            .then(data => setApplestores(data))
+            .then(data => {
+                console.log(data)
+                setApplestores(data)
+            })
     }, [])
 
     const hendeldelete = id => {
@@ -17,7 +20,8 @@ const ManageProducts = () => {
         const procide = window.confirm("Are you Sure ? You want to Delete ?")
         if (procide) {
             console.log(id);
-            const url = `http://localhost:4000//products/${id}`
+            const url = `http://localhost:4000/products/${id}`
+            console.log(url);
             fetch(url, {
                 method: "DELETE"
             })

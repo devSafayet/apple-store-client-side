@@ -15,36 +15,34 @@ const AddProducts = () => {
 
         const email = event?.target?.email?.value;
         const name = event?.target?.productname?.value;
-        const supliername = event?.target?.suplier?.value;
+        const supliername = event?.target?.supplier?.value;
         const price = event?.target?.price?.value;
         const quantity = event?.target?.quantity?.value;
-        const decreption = event?.target?.decreption?.value;
+        const decreption = event?.target?.description?.value;
         const img = event?.target?.img?.value;
 
         const product = {
             email, name, price, quantity, decreption, img, supliername
         }
+        console.log(product);
 
         const url = "http://localhost:4000/products";
 
         fetch(url, {
             method: 'POST',
             headers: {
-                'authorization': `${user.email} ${localStorage.getItem('accessToken')}`,
-                'Content-type': 'application/json; charset=UTF-8'
+                'Content-type': 'application/json; charset=UTF-8',
+                // 'authorization': `${user.email} ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(product)
         })
             .then(res => res.json())
             .then((data) => {
                 console.log(data);
-                toast(data.success)
+                // toast(data.success)
                 event.target.reset()
             });
 
-
-
-        console.log(product);
 
 
     }

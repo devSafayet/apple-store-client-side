@@ -74,7 +74,8 @@ const Inventory = () => {
         event.preventDefault()
         const nowQuantity = Number(event.target.quantity.value);
         updatequantity = nowQuantity + updatequantity;
-        const quantity = { updatequantity };
+        const quantity = { updatequantity }
+        console.log(quantity);
 
         const url = `http://localhost:4000/${id}`
         console.log(url);
