@@ -19,9 +19,7 @@ const ManageProducts = () => {
 
         const procide = window.confirm("Are you Sure? You want to Delete?")
         if (procide) {
-            // console.log(id);
             const url = `https://limitless-fortress-44672.herokuapp.com/products/${id}`
-            // console.log(url);
             fetch(url, {
                 method: "DELETE"
             })

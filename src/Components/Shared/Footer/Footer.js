@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div className='footer-area'>
             <div>
-                <h3 className='text-success '>Apple Store</h3>
+                <h3 className='text-primary '>Apple Store</h3>
             </div>
             <div className='footer-text-area'>
                 <div>

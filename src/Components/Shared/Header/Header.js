@@ -4,6 +4,7 @@ import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import './Header.css';
 
 const Header = () => {
     const [user] = useAuthState(auth);
@@ -13,8 +14,8 @@ const Header = () => {
         })
     }
     return (
-        <nav className=''>
-            <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <nav className='bg-color'>
+            <Navbar collapseOnSelect expand="lg" variant="dark">
                 <Container>
                     <Navbar.Brand as={Link} to="/">
                         <span className='text-primary'>APPLE STORE</span></Navbar.Brand>
