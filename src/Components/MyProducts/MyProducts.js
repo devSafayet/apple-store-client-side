@@ -12,36 +12,41 @@ const MyProducts = () => {
     const [products, setProducts] = useState([]);
     const navigate = useNavigate();
 
-
-
     useEffect(() => {
-
-        const getMyItems = async () => {
-            const email = user?.email;
-            console.log(email);
-            const url = `http://localhost:4000/product?email=${email}`
-
-
-            try {
-                /* const { data } = await axios.get(url, {
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                    }
-                });
-                setProducts(data); */
-            }
-            catch (error) {
-                toast(error.message);
-                if (error.response.status === 401 || error.response.status === 403) {
-                    signOut(auth)
-                    navigate('/signin')
-                }
-            }
-
-        }
-        getMyItems()
-
+        fetch(`http://localhost:4000/myitem/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setProducts(data)
+            })
     }, [user])
+    // useEffect(() => {
+
+    //     const getMyItems = async () => {
+    //         const email = user?.email;
+    //         console.log(email);
+    //         const url = `http://localhost:4000/product?email=${email}`
+
+
+    //         try {
+    //             /* const { data } = await axios.get(url, {
+    //                 headers: {
+    //                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
+    //                 }
+    //             });
+    //             setProducts(data); */
+    //         }
+    //         catch (error) {
+    //             toast(error.message);
+    //             if (error.response.status === 401 || error.response.status === 403) {
+    //                 signOut(auth)
+    //                 navigate('/signin')
+    //             }
+    //         }
+
+    //     }
+    //     getMyItems()
+
+    // }, [user])
     return (
         <div style={{ height: "100%" }}>
             <div className='container'>

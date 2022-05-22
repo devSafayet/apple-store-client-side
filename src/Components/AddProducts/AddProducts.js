@@ -69,7 +69,7 @@ const AddProducts = () => {
                         <input type="text" name="img" id="" required placeholder='image URL Link' />
                     </div>
 
-                    <input className='submit-btn bg-warning' type="submit" value="Add your Product" />
+                    <input className='submit-btn bg-primary' type="submit" value="Add your Product" />
                 </div>
             </form>
             <ToastContainer></ToastContainer>

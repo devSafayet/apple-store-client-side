@@ -13,6 +13,7 @@ const Items = () => {
             .then(res => res.json())
             .then(data => setApples(data))
     }, [])
+    console.log(apples);
     const newApples = apples.slice(0, 6)
     return (
         <div className='mt-5 p-3'>

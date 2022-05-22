@@ -1,27 +1,37 @@
-.invrntory-card {
-    background-color: antiquewhite;
+.inventory-card {
+    background-color: #F5F5F7;
     margin: mx-0 auto;
     padding: 10px;
     margin-top: 20px;
 }
 
+.quantity {
+    font-weight: 500;
+}
+
+.supplier-email {
+    color: darkgray;
+}
+
 .submit-btn {
-    background-color: rgb(142, 211, 64);
+
     border: 0;
     border-radius: 5px;
     padding: 5px;
 }
 
-.dellivary-Btn {
-    background-color: rgb(196, 218, 72);
+.delivery-Btn {
+    background-color: #198754;
+    color: white;
     border-radius: 5px;
     border: 0;
     width: 120px;
     height: 40px;
 }
 
-.ddellivary-Btn:hover {
-    background-color: rgba(196, 218, 72, 0.63);
+.delivery-Btn:hover {
+    background-color: white;
+    color: #198754;
 }
 
 .inventory-main {

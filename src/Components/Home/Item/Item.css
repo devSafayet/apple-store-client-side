@@ -3,28 +3,21 @@
 }
 
 .card-bg {
-    background-color: rgb(240, 230, 235);
+    background-color: #FFFFFF;
 }
 
 .title-name {
-    color: rgb(248, 157, 37);
+    color: #111312;
 }
 
-.text-color {
-    color: blueviolet;
-    font-weight: 500;
-}
+
 
 .apple-price {
-    color: #ff0c00c4;
+    color: #0f1110;
     font-weight: 400;
 }
 
 .apple-quantity {
-    color: #7f89ff;
+    color: #0f1110;
     font-weight: 500;
-}
-
-.apple-suplier {
-    color: #c1187d;
 }

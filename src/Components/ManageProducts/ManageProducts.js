@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ManageProduct from '../ManageProduct/ManageProduct';
+import './ManageProducts.css';
 
 const ManageProducts = () => {
     const [applestores, setApplestores] = useState([]);
@@ -17,7 +18,7 @@ const ManageProducts = () => {
 
     const hendeldelete = id => {
 
-        const procide = window.confirm("Are you Sure ? You want to Delete ?")
+        const procide = window.confirm("Are you Sure? You want to Delete?")
         if (procide) {
             console.log(id);
             const url = `http://localhost:4000/products/${id}`
