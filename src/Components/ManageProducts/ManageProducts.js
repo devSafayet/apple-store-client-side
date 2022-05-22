@@ -6,12 +6,11 @@ const ManageProducts = () => {
     const [applestores, setApplestores] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:4000/products";
+        const url = "https://limitless-fortress-44672.herokuapp.com/products";
 
         fetch(url)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
                 setApplestores(data)
             })
     }, [])
@@ -20,9 +19,9 @@ const ManageProducts = () => {
 
         const procide = window.confirm("Are you Sure? You want to Delete?")
         if (procide) {
-            console.log(id);
-            const url = `http://localhost:4000/products/${id}`
-            console.log(url);
+            // console.log(id);
+            const url = `https://limitless-fortress-44672.herokuapp.com/products/${id}`
+            // console.log(url);
             fetch(url, {
                 method: "DELETE"
             })
@@ -42,7 +41,7 @@ const ManageProducts = () => {
         <div style={{ height: "100%" }}>
             <div className='container ps-3 h-100'>
 
-                <table class="table table-dark table-striped table-style manage-main">
+                <table className="table table-style manage-main">
                     <thead>
                         <tr>
                             <th scope="col">Quantity</th>
@@ -51,13 +50,14 @@ const ManageProducts = () => {
                             <th scope="col">Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        {
-                            applestores.map(applestore => <ManageProduct key={applestore._id} applestore={applestore} hendeldelete={hendeldelete}></ManageProduct>)
-                        }
-
-                    </tbody>
                 </table>
+
+                {
+                    applestores.map(applestore => <ManageProduct key={applestore._id} applestore={applestore} hendeldelete={hendeldelete}></ManageProduct>)
+                }
+
+
+
 
             </div>
         </div>

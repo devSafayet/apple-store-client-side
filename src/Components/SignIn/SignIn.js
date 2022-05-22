@@ -63,7 +63,7 @@ const SignIn = () => {
 
         console.log(user.user.email);
 
-        const url = `http://localhost:4000/signin`
+        const url = `https://limitless-fortress-44672.herokuapp.com/signin`
 
         fetch(url, {
             method: 'POST',
@@ -77,7 +77,7 @@ const SignIn = () => {
             .then(res => res.json())
             .then((data) => {
                 console.log(data.token);
-                localStorage.setItem("accessToken", data.token) // send token to localsotorage
+                localStorage.setItem("accessToken", data.token)
 
                 navigate(from, { replace: true });
             });

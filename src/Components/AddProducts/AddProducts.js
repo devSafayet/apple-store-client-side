@@ -1,8 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { ToastContainer } from 'react-toast';
-import { toast } from 'react-toastify';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const AddProducts = () => {
@@ -26,20 +25,18 @@ const AddProducts = () => {
         }
         console.log(product);
 
-        const url = "http://localhost:4000/products";
-
+        const url = "https://limitless-fortress-44672.herokuapp.com/products";
         fetch(url, {
             method: 'POST',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
-                // 'authorization': `${user.email} ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(product)
         })
             .then(res => res.json())
             .then((data) => {
                 console.log(data);
-                // toast(data.success)
+                toast("Added Your Product.")
                 event.target.reset()
             });
 

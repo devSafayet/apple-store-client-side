@@ -12,7 +12,7 @@ const Inventory = () => {
     const [apples, setApples] = useState();
 
     useEffect(() => {
-        const url = `http://localhost:4000/products/${id}`
+        const url = `https://limitless-fortress-44672.herokuapp.com/products/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setApples(data))
@@ -32,7 +32,7 @@ const Inventory = () => {
 
             console.log(quantity);
 
-            const url = `http://localhost:4000/products/${id}`
+            const url = `https://limitless-fortress-44672.herokuapp.com/products/${id}`
             console.log(url);
             fetch(url, {
                 method: "PUT",
@@ -51,7 +51,7 @@ const Inventory = () => {
         if (updatequantity <= 0) {
             const updatequantity = "stock Out"
             const quantity = { updatequantity }
-            const url = `http://localhost:4000/products/${id}`
+            const url = `https://limitless-fortress-44672.herokuapp.com/products/${id}`
             console.log(url);
             fetch(url, {
                 method: "PUT",
@@ -76,7 +76,7 @@ const Inventory = () => {
         const quantity = { updatequantity }
         console.log(quantity);
 
-        const url = `http://localhost:4000/products/${id}`
+        const url = `https://limitless-fortress-44672.herokuapp.com/products/${id}`
         console.log(url);
         fetch(url, {
             method: "PUT",
@@ -112,7 +112,7 @@ const Inventory = () => {
                             <form onSubmit={addProduct} className='m-5'>
                                 <h5 className='mctitle'>Update Quantity</h5>
                                 <input type="number" name='quantity' className='mb-3' />
-                                <button className='button'>Store Product</button>
+                                <button className='btn btn-primary'>Store Product</button>
                                 <Link to='/addProducts' className='btn btn-warning mt-2'>Add new product</Link>
                             </form>
                         </div>

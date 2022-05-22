@@ -6,14 +6,14 @@ const Items = () => {
     const [apples, setApples] = useState([]);
 
     useEffect(() => {
-        const url = "http://localhost:4000/products";
+        const url = "https://limitless-fortress-44672.herokuapp.com/products";
 
 
         fetch(url)
             .then(res => res.json())
             .then(data => setApples(data))
     }, [])
-    console.log(apples);
+
     const newApples = apples.slice(0, 6)
     return (
         <div className='mt-5 p-3'>

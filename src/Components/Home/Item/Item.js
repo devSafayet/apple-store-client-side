@@ -5,7 +5,6 @@ import './Item.css';
 
 const Item = ({ apple }) => {
     const navigate = useNavigate()
-    console.log(apple);
 
     const hendelInventory = (id) => {
         navigate(`/inventory/${id}`)
