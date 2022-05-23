@@ -44,11 +44,11 @@ const SignIn = () => {
         console.log(email)
         if (email) {
             await sendPasswordResetEmail(email);
-            toast("email sent");
+            toast("Send Email");
 
         }
         else {
-            toast('enter your email')
+            toast('Enter your email');
 
         }
 
@@ -108,7 +108,7 @@ const SignIn = () => {
                         }
                     </p>
                     {errorElement}
-                    <input className='submit-btn bg-primary' type="submit" value="signin" />
+                    <input className='submit-btn bg-primary' type="submit" value="Sign In" />
                 </div>
                 <div className='d-flex justify-content-around align-items-center'>
                     <div>

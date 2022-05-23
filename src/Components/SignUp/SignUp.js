@@ -1,7 +1,8 @@
 import React, { useRef, useState } from 'react';
-import { Spinner, ToastContainer } from 'react-bootstrap';
+import { Spinner } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 import SocialMedia from '../SocialMedia/SocialMedia';
 import './SignUp.css';
@@ -70,7 +71,7 @@ const SignUp = () => {
 
                     <p className='text-center text-danger'>{error}</p>
 
-                    <input className='submit-btn bg-primary' type="submit" value="signup" />
+                    <input className='submit-btn bg-primary' type="submit" value="Sign Up" />
                 </div>
                 <div className='d-flex justify-content-around align-items-center'>
                     <div>
