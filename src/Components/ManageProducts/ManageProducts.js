@@ -39,7 +39,7 @@ const ManageProducts = () => {
         <div style={{ height: "100%" }}>
             <div className='container ps-3 h-100'>
 
-                <table className="table table-style manage-main">
+                <table className="table table-style manage-main m-auto mt-5 mb-5 table-hover">
                     <thead>
                         <tr>
                             <th scope="col">Quantity</th>
@@ -48,13 +48,13 @@ const ManageProducts = () => {
                             <th scope="col">Delete</th>
                         </tr>
                     </thead>
+
+
+                    {
+                        applestores.map(applestore => <ManageProduct key={applestore._id} applestore={applestore} hendeldelete={hendeldelete}></ManageProduct>)
+                    }
+
                 </table>
-
-                {
-                    applestores.map(applestore => <ManageProduct key={applestore._id} applestore={applestore} hendeldelete={hendeldelete}></ManageProduct>)
-                }
-
-
 
 
             </div>
